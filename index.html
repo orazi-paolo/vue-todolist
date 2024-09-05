@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
     <meta charset="UTF-8">
@@ -17,13 +17,35 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- style -->
-    <link rel="stylesheet" href=" css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <!-- Vue 3 -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
+    <div id="app">
+        <header>
+            <h1 class="text-center mt-3">TO DO LIST</h1>
+        </header>
+        <main>
+            <div class="container">
+                <h3>Cose da fare:</h3>
+                <!-- aggiungo la lista delle cose da fare -->
+                <ul>
+                    <li v-for="(todo, index) in todoList" class="mb-3">
+                        <!-- se è stato fatto visualizzo il testo sbarrato altrimenti no -->
+                        <span v-if="!todo.done" class="me-5">{{ todo.text }}</span>
+                        <span v-else class="text-decoration-line-through me-5"> {{ todo.text }}</span>
+                        <button>
+                            <i class="fas fa-trash fa-lg"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+        </main>
+    </div>
 
     <!-- javascript -->
     <script src="js/script.js"></script>
