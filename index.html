@@ -37,7 +37,7 @@
                         <!-- se è stato fatto visualizzo il testo sbarrato altrimenti no -->
                         <span v-if="!todo.done" class="me-5">{{ todo.text }}</span>
                         <span v-else class="text-decoration-line-through me-5"> {{ todo.text }}</span>
-                        <button>
+                        <button @click="removeTodo(index)">
                             <i class="fas fa-trash fa-lg"></i>
                         </button>
                     </li>

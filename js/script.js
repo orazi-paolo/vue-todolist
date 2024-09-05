@@ -22,5 +22,11 @@ createApp({
                 }
             ],
         }
+    },
+    methods: {
+        // metodo per rimuove dalla lista un todo
+        removeTodo(index) {
+            this.todoList.splice(index, 1);
+        }
     }
 }).mount('#app')
