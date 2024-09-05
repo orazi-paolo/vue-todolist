@@ -35,8 +35,12 @@
                 <ul>
                     <li v-for="(todo, index) in todoList" class="mb-3">
                         <!-- se è stato fatto visualizzo il testo sbarrato altrimenti no -->
-                        <span v-if="!todo.done" class="me-5">{{ todo.text }}</span>
-                        <span v-else class="text-decoration-line-through me-5"> {{ todo.text }}</span>
+                        <!-- quando clicco sul testo inverto la proprietà done booleana -->
+                        <span v-if="!todo.done" @click="toggleDone(index)" class="me-5 pointer">{{ todo.text }}</span>
+                        <span v-else class="text-decoration-line-through me-5 pointer" @click="toggleDone(index)"> {{
+                            todo.text
+                            }}</span>
+                        <!-- quando clicco rimuovo il task dall array -->
                         <button @click="removeTodo(index)">
                             <i class="fas fa-trash fa-lg"></i>
                         </button>

@@ -21,6 +21,7 @@ createApp({
                     done: true
                 }
             ],
+            // variabile per il nuovo todo
             newTodoText: '',
         }
     },
@@ -41,8 +42,13 @@ createApp({
                 this.cleanerNewTodo();
             }
         },
+        // metodo per pulire il campo input
         cleanerNewTodo() {
             this.newTodoText = '';
-        }
+        },
+        // metodo per invertite il done del todo
+        toggleDone(index) {
+            this.todoList[index].done = !this.todoList[index].done;
+        },
     }
 }).mount('#app')
