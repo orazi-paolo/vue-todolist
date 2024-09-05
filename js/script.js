@@ -21,12 +21,28 @@ createApp({
                     done: true
                 }
             ],
+            newTodoText: '',
         }
     },
     methods: {
-        // metodo per rimuove dalla lista un todo
+        // metodo per rimuovere dalla lista un todo
         removeTodo(index) {
             this.todoList.splice(index, 1);
+        },
+        // metodo per aggiunger un nuovo todo alla lista
+        newTodo() {
+            if (this.newTodoText.length < 3) {
+                return;
+            } else {
+                this.todoList.push({
+                    text: this.newTodoText,
+                    done: false
+                });
+                this.cleanerNewTodo();
+            }
+        },
+        cleanerNewTodo() {
+            this.newTodoText = '';
         }
     }
 }).mount('#app')

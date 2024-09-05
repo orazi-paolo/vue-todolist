@@ -42,8 +42,19 @@
                         </button>
                     </li>
                 </ul>
+                <div>
+                </div>
             </div>
-
+            <div class="container d-flex justify-content-center">
+                <div class="input-group mb-3 w-50">
+                    <!-- quando premo invio oppure quando clicco sul pulsante inserisco la nuova task nell array -->
+                    <input type="text" class="form-control" placeholder="Inserisci una nuova cosa da fare"
+                        aria-label="Recipient's username" aria-describedby="button-addon2" v-model="newTodoText"
+                        @keyup.enter="newTodo">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                        @click="newTodo()">Aggiungi</button>
+                </div>
+            </div>
         </main>
     </div>
 
